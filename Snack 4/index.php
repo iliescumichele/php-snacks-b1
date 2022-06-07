@@ -2,6 +2,22 @@
 /*
     Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
 */
+
+echo ($_GET);
+
+$arrayNumUnivoci = [];
+$min = 1;
+$max = 20;
+
+while(count($arrayNumUnivoci) < 15){
+    $num = rand($min, $max);
+    if(!in_array($num, $arrayNumUnivoci)){
+        $arrayNumUnivoci[] = $num;
+    }
+}
+
+echo (sizeof($arrayNumUnivoci));
+
 ?>
 
 
@@ -14,6 +30,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php
+        for($i = 0; $i < sizeof($arrayNumUnivoci); $i++){
+            echo "<p>" . $arrayNumUnivoci[$i] . "</p>";
+        };
+    ?>
 </body>
 </html>
