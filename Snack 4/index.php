@@ -3,11 +3,9 @@
     Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
 */
 
-echo ($_GET);
-
 $arrayNumUnivoci = [];
 $min = 1;
-$max = 20;
+$max = 30;
 
 while(count($arrayNumUnivoci) < 15){
     $num = rand($min, $max);
@@ -16,7 +14,8 @@ while(count($arrayNumUnivoci) < 15){
     }
 }
 
-echo (sizeof($arrayNumUnivoci));
+sort($arrayNumUnivoci);
+var_dump($arrayNumUnivoci);
 
 ?>
 
@@ -31,9 +30,11 @@ echo (sizeof($arrayNumUnivoci));
 </head>
 <body>
     <?php
+        echo "<h3>Numeri random univoci:</h3><ul>";
         for($i = 0; $i < sizeof($arrayNumUnivoci); $i++){
-            echo "<p>" . $arrayNumUnivoci[$i] . "</p>";
+            echo "<li>" . $arrayNumUnivoci[$i] . "</li>";
         };
+        echo "</ul>";
     ?>
 </body>
 </html>
