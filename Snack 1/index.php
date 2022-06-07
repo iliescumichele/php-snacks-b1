@@ -48,7 +48,9 @@ $partite = [
 var_dump($partite);
 
 //usando  "count($nomeArray)" o "sizeof($nomeArray)"  ho il numero degli elementi dell'array
-echo sizeof($partite);
+echo "Num. elemnti dell'array --> " . sizeof($partite) . "<br>";
+//usando  "count($nomeArray, 1)" mi conta gli elementi dell'array in modo ricorsivo
+echo "Num. elemnti dell'array (ricorsivo) --> " . sizeof($partite, 1);
 
 
 
@@ -68,10 +70,13 @@ echo sizeof($partite);
 
     <?php
         for($i = 0; $i < sizeof($partite); $i++){
-            for($j = 0; $j < sizeof($partite[$i]); $j++){
-                echo "$partite[$i][$j]";
-            };
-            
+                echo 
+                    "<p>"
+                        . $partite[$i]["squadraCasa"] . " - " . $partite[$i]["squadraOspite"] . " | " . 
+                        $partite[$i]["punteggioCasa"] . " - " . $partite[$i]["punteggioOspite"] .
+                    "</p>"
+                ;
+            echo "<hr>";
         };
     ?>
 </body>
